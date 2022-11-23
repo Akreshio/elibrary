@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="role_data" author="Victor">
+        <loadData commentLineStartsWith="#"
+                  encoding="UTF-8"
+                  file="role.csv"
+                  quotchar="'"
+                  relativeToChangelogFile="true"
+                  separator=","
+                  tableName="role"
+                  usePreparedStatements="true">
+            <column name="name" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="publication_data" author="Victor">
+        <loadData commentLineStartsWith="#"
+                  encoding="UTF-8"
+                  file="publication.csv"
+                  quotchar="'"
+                  relativeToChangelogFile="true"
+                  separator=","
+                  tableName="publication"
+                  usePreparedStatements="true">
+            <column name="name" type="STRING"/>
+            <column name="isbn" type="STRING"/>
+            <column name="author" type="STRING"/>
+            <column name="type" type="STRING"/>
+            <column name="page" type="NUMERIC"/>
+            <column name="count" type="NUMERIC"/>
+            <column name="publisher" type="STRING"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
